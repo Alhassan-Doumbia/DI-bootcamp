@@ -13,6 +13,7 @@ print(multiples)
 
 #Challenge 2
 #Instruction
+# Write a program that asks a string to the user, and display a new string with any duplicate consecutive letters removed.
 
 user_string = input("enter a string : ")
 user_string_list = list(user_string)
