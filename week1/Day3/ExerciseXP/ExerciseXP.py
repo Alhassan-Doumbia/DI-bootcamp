@@ -245,3 +245,11 @@ class Zoo:
                     sortedAnimalDict[key].append(Animal)
 
         return sortedAnimalDict
+
+    def get_groups(self):
+        sortedAnimalDict = self.sort_animals()
+        for key in sortedAnimalDict:
+            print(f"{key} : {sortedAnimalDict[key]}")
+
+zooMonger=Zoo("Monger",["Zebra","Monkey","Lion","Giraffe","Goat"])
+# Bonus: Modify the add_animal() method to get *args so you dont need to repeat the method each time for a new animal, you can pass multiple animals names separated by a comma.
