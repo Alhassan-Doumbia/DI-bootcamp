@@ -105,7 +105,7 @@ def usingContinue():
 def usingPass():
     for item in [1,2,3]:
         # comment
-        pass # to avoid the error
+        pass # to avoid the error #Pass permet en gros de dire "je sais que je dois faire quelque chose ici , mais je ne veux pas le faire pour l'instant , alors je vais juste passer cette partie de code "
     
     print('Finish the script')
     
