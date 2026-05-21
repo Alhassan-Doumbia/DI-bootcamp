@@ -89,4 +89,5 @@ def affordableItems(moneyInWallet=300):
 
 
 user_money=input("how much money do you have in your wallet :")
+try
 affordableItems(user_money)
