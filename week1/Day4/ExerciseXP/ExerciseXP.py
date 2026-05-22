@@ -48,7 +48,6 @@ class Pets():
 
 class Cat():
     is_lazy = True
-
     def __init__(self, name, age):
         self.name = name
         self.age = age
@@ -56,51 +55,53 @@ class Cat():
     def walk(self):
         return f'{self.name} is just walking around'
 
-siamese=Cat("Kirby",2)
-bengal=Cat("Miaousse",1)
-chartreux=Cat("Chatouille",3)
-
-all_cats=[siamese,bengal,chartreux]
-
-sara_pets=Pets(all_cats)
-sara_pets.walk()
-
-class siamese(Cat):
+# On crée la classe Siamese AVANT de l'instancier
+class Siamese(Cat):
     def sing(self, sounds):
         return f'{sounds}'
+
+
+siamese = Siamese("Kirby", 2)
+bengal = Cat("Miaousse", 1)
+chartreux = Cat("Chatouille", 3)
+
+all_cats = [bengal, chartreux, siamese]
+
+sara_pets = Pets(all_cats)
+sara_pets.walk()
 
 
 
 #============Divider===================================
 class Dog:
-    def __init__(self,name,age,weight):
-        self.name=name
-        self.age=age
-        self.weight=weight
-    def bark(self):
-        print(f"{self.name} is barking")
-    def run_speed(self):
-        return self.weight/self.age*10
-    
+    def __init__(self, name, age, weight):
+        self.name = name
+        self.age = age
+        self.weight = weight
 
-    def fight(self,other):
-        if isinstance:
-            other_dog_power=other.run_speed()*other.weight
-            current_dog_power=self.run_speed()*other.weight
+    def bark(self):
+        return f"{self.name} is barking" # Retourner une string est plus propre pour le print() extérieur
+
+    def run_speed(self):
+        return (self.weight / self.age) * 10
+    
+    def fight(self, other):
+        if isinstance(other, Dog): # Correction ici
+            other_dog_power = other.run_speed() * other.weight
+            current_dog_power = self.run_speed() * self.weight # Correction ici (self.weight)
             
-            if(other_dog_power>current_dog_power):
-                print(f"{other_dog.name} is the winner")
+            if other_dog_power > current_dog_power:
+                print(f"{other.name} is the winner") # Correction ici (other.name)
             else:
                 print(f"{self.name} is the winner")
 
-dog1=Dog("Médor",2,14)
-dog2=Dog("Brutus",4,10)
-dog3=Dog("Goat",1,12)
+dog1 = Dog("Médor", 2, 14)
+dog2 = Dog("Brutus", 4, 10)
+dog3 = Dog("Goat", 1, 12)
 
 print(dog1.bark())
 print(dog2.run_speed())
-print(dog1.fight(dog2))
-
+dog1.fight(dog2) # Pas de print() ici car la méthode s'en occupe déjà
 
 
 # ===========================Divider========================================
@@ -249,51 +250,54 @@ pet_dog1.do_a_trick()
 # Don’t forget to test your classes by creating an instance of Family, adding members, and calling each method to see the expected output.
 
 
-
 class Person:
-    def __init__(self,name,age,last_name):
-        self.name=name
-        self.age=age
-        self.last_name=last_name
+    def __init__(self, first_name, age): # Pas de last_name ici selon la consigne
+        self.first_name = first_name
+        self.age = age
+        self.last_name = "" # Initialisé comme chaîne vide
+
     def is_18(self):
-        if self.age>=18:
-            return True
-        else:
-            return False
+        return self.age >= 18
 
 class Family:
-    def __init__(self,last_name,member=None):
-        if member is None:
-            self.member=[]
-        else:
-            self.member=member
-        self.last_name=last_name
+    def __init__(self, last_name):
+        self.last_name = last_name
+        self.members = [] # Doit être une liste vide à l'initialisation
 
-    def born(self,first_name,age):
-        new_member=Person(first_name,age,self.last_name)
-        self.member.append(new_member)
+    def born(self, first_name, age):
+        new_member = Person(first_name, age)
+        new_member.last_name = self.last_name # On lui donne le nom de famille
+        self.members.append(new_member)
         print(f"Congratulations to the new born {first_name} {self.last_name} !")
 
-    def check_majority(self,first_name):
-        for member in self.member:
-            if member.name==first_name:
+    def check_majority(self, first_name):
+        for member in self.members:
+            if member.first_name == first_name:
                 if member.is_18():
-                    print(f"{member.name} is an adult")
+                    # Respect strict de la phrase demandée :
+                    print("You are over 18, your parents Jane and John accept that you will go out with your friends")
                 else:
-                    print(f"{member.name} is a minor")
+                    # Respect strict de la phrase demandée :
+                    print("Sorry, you are not allowed to go out with your friends.")
+                return # On arrête la fonction dès qu'on a trouvé la personne
         
     def family_presentation(self):
         print(f"Family {self.last_name} :")
-        for member in self.member:
-            print(f"{member.name} {member.last_name} is {member.age} years old")
-family1=Family("Smith")
+        for member in self.members:
+            print(f"{member.first_name} is {member.age} years old")
+
+# Tests
+family1 = Family("Smith")
 family1.born("John", 30)
 family1.born("Emily", 15)
+
+family1.check_majority("John")
+family1.check_majority("Emily")
+family1.family_presentation()
+
 if(family1.member[0].is_18()):
     print(f"{family1.member[0].name} can go out")
 else:
     print(f"{family1.member[0].name} cannot go out")
 
-family1.check_majority("John")
-family1.check_majority("Emily")
-family1.family_presentation()
+
