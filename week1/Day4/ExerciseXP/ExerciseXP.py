@@ -254,7 +254,7 @@ class Person:
     def __init__(self, first_name, age): # Pas de last_name ici selon la consigne
         self.first_name = first_name
         self.age = age
-        self.last_name = "" # Initialisé comme chaîne vide
+        self.last_name = "" 
 
     def is_18(self):
         return self.age >= 18
@@ -262,7 +262,7 @@ class Person:
 class Family:
     def __init__(self, last_name):
         self.last_name = last_name
-        self.members = [] # Doit être une liste vide à l'initialisation
+        self.members = [] 
 
     def born(self, first_name, age):
         new_member = Person(first_name, age)
@@ -274,12 +274,12 @@ class Family:
         for member in self.members:
             if member.first_name == first_name:
                 if member.is_18():
-                    # Respect strict de la phrase demandée :
+               
                     print("You are over 18, your parents Jane and John accept that you will go out with your friends")
                 else:
-                    # Respect strict de la phrase demandée :
+                  
                     print("Sorry, you are not allowed to go out with your friends.")
-                return # On arrête la fonction dès qu'on a trouvé la personne
+                
         
     def family_presentation(self):
         print(f"Family {self.last_name} :")
