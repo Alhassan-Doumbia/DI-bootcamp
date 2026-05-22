@@ -24,27 +24,15 @@ class Cat:
     def __str__(self):
         return(f"the cat name is{self.name} and its age is {self.age}")
         
-    #  def __lt__(self,other):
-    #      return "YES"
-    
-
 chat1=Cat(2,"Kirby")
 chat2=Cat(1,"Miaouusse")
 chat3=Cat(5,"Le Grando")
 
 def findOldestCat(cat1,cat2,cat3):
-    catList=[]
-    catAge=[]
-    catList.append(cat1)
-    catList.append(cat2)
-    catList.append(cat3)
-    
-    for e in range(0,len(catList)):
-        catAge.append(catList[e].age)
+    catList=[cat1,cat2,cat3]
+    catAge=[cat.age for cat in catList] 
     #trouvons index du plus grand maintenant vu que l'index du plus grand sera au même index que son objet
     oldestCatIndex=catAge.index(max(catAge))
-    # print(f"the oldest cat is {catList[oldestCatIndex].name}")
-    # print(catList[oldestCatIndex])
     return catList[oldestCatIndex]
    
    
