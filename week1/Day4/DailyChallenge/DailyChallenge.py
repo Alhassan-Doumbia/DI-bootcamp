@@ -92,6 +92,7 @@ class Pagination:
         return self.items[start:stop]
         #Pourquoi ? parce qu'à chaque  pas , on a la position de depard est le résultat de 10*par la page actuelle et la page presentant environs 10 pages , on ajoute tout simplement 10 pages '
 
+#En gros , toutes les navigations servent juste à changer de manière dynamique self.current_idx et ensuite retourner self ( comme si lobjet avait été mis à jour) et ensuite faire du chaining , on peut faire du chaining en retournant self .
 
     def go_to_page(self, page_num):
         
@@ -100,19 +101,19 @@ class Pagination:
           
 
         self.current_idx = page_num - 1
-        return self.get_visible_items()
+        # return self.get_visible_items() Selon les corrections suggérés par l'IA de dev institute , go to paye doit juste change rla page et non retourner de donner .
 
 
     def first_page(self):
 
         self.current_idx = 0
-        return self.get_visible_items()
+        return self
 
 
     def last_page(self):
 
         self.current_idx = self.number_of_pages - 1
-        return self.get_visible_items()
+        return self #Doit se terminer avec self comme ça on pourra faire instance.last_page().get_visible_items()
 
 
     def next_page(self):
@@ -120,15 +121,14 @@ class Pagination:
         if self.current_idx < self.number_of_pages - 1:
             self.current_idx += 1
 
-        return self.get_visible_items()
-
+        return self
 
     def previous_page(self):
 
         if self.current_idx > 0:
             self.current_idx -= 1
 
-        return self.get_visible_items()
+        return self
         
     #Bonus 
     # self.datas_to_show=self.go_to_page(self.page_size) #test
