@@ -1,4 +1,4 @@
-```python
+
 import math
 
 
@@ -86,4 +86,4 @@ sorted_circles = sorted(all_circles)
 for circle in sorted_circles:
     print(circle)
     print("------")
-```
+
