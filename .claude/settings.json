@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c \"import zipfile; z = zipfile.ZipFile\\('Diabetes_prediction_dataset.zip'\\); print\\(z.namelist\\(\\)\\)\")"
+    ]
+  }
+}
