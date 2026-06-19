@@ -1,0 +1,1 @@
+lien google colab pour turoriel sur fonciton de perte , otimisateurs , et gradiant descendant  :https://colab.research.google.com/drive/1PRW3Fd2roCICzfHafck-RM_mz47tLJ5C?usp=drive_link

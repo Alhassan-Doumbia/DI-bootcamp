@@ -1,0 +1,79 @@
+[
+    {
+        "name":"Tracey Shields",
+        "age":21,
+        "interests":[
+            "technology",
+            "podcasts",
+            "aviation"
+        ],
+        "activity_log":[
+            "shared healthy eating",
+            "listened to jazz album",
+            "read about laptops"
+        ]
+    },
+    {
+        "name":"Kathy Melton",
+        "age":24,
+        "interests":[
+            "politics",
+            "gaming",
+            "collecting",
+            "board games",
+            "basketball"
+        ],
+        "activity_log":[
+            "bought local cuisine",
+            "listened to generative AI",
+            "bought mindfulness",
+            "listened to ancient civilizations",
+            "shared photography techniques"
+        ]
+    },
+    {
+        "name":"William Jones",
+        "age":42,
+        "interests":[
+            "space exploration",
+            "anime",
+            "road trips",
+            "education",
+            "graphic design"
+        ],
+        "activity_log":[
+            "watched fashion trends",
+            "watched video editing",
+            "read about music festivals",
+            "shared work-life balance",
+            "shared video game releases",
+            "bought cooking recipes"
+        ]
+    },
+    {
+        "name":"Daniel Taylor",
+        "age":48,
+        "interests":[
+            "marketing",
+            "politics"
+        ],
+        "activity_log":[
+            "watched entrepreneurship",
+            "shared marathon training",
+            "watched virtual reality"
+        ]
+    },
+    {
+        "name":"Kevin Wyatt",
+        "age":53,
+        "interests":[
+            "blogging",
+            "cryptocurrency"
+        ],
+        "activity_log":[
+            "read about startup ideas",
+            "listened to mechanical keyboards",
+            "listened to mechanical keyboards"
+        ]
+    }
+]
